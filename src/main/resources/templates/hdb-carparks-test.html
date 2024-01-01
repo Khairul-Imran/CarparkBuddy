@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <title>HDB CarParks</title>
+        <script>
+            function popUp() {
+                alert("Carpark added to favourites!");
+            }
+        </script>
+
+    </head>
+    <body>
+        <div class="container">
+
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+                <div class="col-md-3 mb-2 mb-md-0">
+                    <a th:href="@{/homepage}" class="d-inline-flex link-body-emphasis text-decoration-none">
+                      
+                      <img src="car-svgrepo-com.svg" alt="Car Icon" style="width: 50px; height: 50px;">
+
+                      <span th:text="${username}" class="nav-link px-2 link-secondary mt-3"></span>
+                    </a>
+                </div>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+
+                    <li><a th:href="@{/homepage}" class="nav-link px-2 link-secondary btn btn-outline-info">Home</a></li>
+
+                    <!-- To change this href -->
+                    <li><a th:href="@{/mall-ura-carparks}" class="nav-link px-2 link-secondary btn btn-outline-info">FAQs</a></li>
+
+                    <li><a href="#" class="nav-link px-2 link-secondary btn btn-outline-info">About</a></li>
+                </ul>
+
+                <div class="col-md-3 text-end">
+                    <a th:href="@{/}">
+                        <button type="button" class="btn btn-outline-danger me-2">Logout</button>
+                    </a>
+                    
+                </div>
+
+            </header>
+
+            <h1>HDB Carparks</h1>
+
+            <div>
+                <form th:action="@{/hdb-filter}" method="GET">
+                    <input type="text" name="query" placeholder="Filter Address" required>
+
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <div>
+                <p>
+                    To view all carparks in JSON format, <a th:href="@{/allHDBCarparks}" target="_blank">click here</a>!
+                </p>
+            </div>
+
+            <div>
+                <table class="table table-bordered table-hover" >
+                    <thead>
+                        <tr>
+                            <th>Carpark Address</th>
+                            <th>Available Lots</th>
+                            <th>Latest Update</th>
+                            <th>Favourite</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-group-divider">
+                        <tr th:each="carpark : ${hdbCarParkMap}">
+                            <td class="">
+                                <a class="text-reset text-decoration-none nav-link link-secondary btn " th:href="${carpark.googleMapsLink}" target="_blank">
+                                    <span th:text="${carpark.carParkName}"></span>
+                                </a>
+                            </td>
+
+                            <td th:text="${carpark.lotsAvailable}"></td>
+                            <td th:text="${carpark.updateDateTime}"></td>
+                            <td>
+                                <form th:action="@{/addFavourite}" method="POST">
+                                    <input type="hidden" name="username" th:value="${username}">
+                                    <input type="hidden" name="carParkName" th:value="${carpark.carParkName}">
+                                    <button type="submit" onclick="popUp()">Add to Favourites</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>

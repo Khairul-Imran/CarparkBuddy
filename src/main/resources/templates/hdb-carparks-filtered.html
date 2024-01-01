@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Filtered HDB CarParks</title>
+    <script>
+        function popUp() {
+            alert("Carpark added to favourites!");
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container wrapper">
+
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a th:href="@{/homepage}" class="d-inline-flex link-body-emphasis text-decoration-none">
+
+                    <img src="car-svgrepo-com.svg" alt="Car Icon" style="width: 50px; height: 50px;">
+
+                    <span th:text="${username}" class="nav-link px-2 link-secondary mt-3"></span>
+                </a>
+            </div>
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+
+                <li><a th:href="@{/homepage}" class="nav-link px-2 link-secondary btn btn-outline-info">Home</a></li>
+
+                <li><a class="nav-link px-2 link-secondary btn btn-outline-info" data-bs-toggle="modal"
+                        data-bs-target="#FAQModal">FAQs</a></li>
+
+                <!-- Modal -->
+                <div class="modal fade" id="FAQModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Frequently Asked Questions</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="accordion" id="FAQAccordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                                <strong>How accurate is your data?</strong>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse"
+                                            data-bs-parent="#FAQAccordion">
+                                            <div class="accordion-body">
+                                                The dataset used is taken from Data.gov.sg's <a
+                                                    href="https://beta.data.gov.sg/collections/85/view"
+                                                    target="_blank">Real-time Carpark Availability API</a>. Their API is
+                                                updated every minute, and so are the timings and availabilities
+                                                reflected in this website. <strong>Any inaccuracies found in the data
+                                                    are the responsibility of Data.gov.</strong>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                <strong>Why can't I find the carpark that I want?</strong>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            data-bs-parent="#FAQAccordion">
+                                            <div class="accordion-body">
+                                                Unfortunately, the API's data is limited to HDB Carparks only. However,
+                                                this application will be expanded in the future to include Mall and URA
+                                                Carparks too. Keep a look out for that!
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                <strong>Why did you build this website?</strong>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            data-bs-parent="#FAQAccordion">
+                                            <div class="accordion-body">
+                                                I built this website to help drivers in Singapore quickly identify if a
+                                                carpark is full and to allow them to find alternative options nearby.
+                                                <br><br>
+                                                Also, this website was built as part of a Mini Project requirement for
+                                                my Traineeship with VISA.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <li><a class="nav-link px-2 link-secondary btn btn-outline-info" data-bs-toggle="modal"
+                        data-bs-target="#AboutModal">About</a></li>
+
+                <!-- Modal -->
+                <div class="modal fade" id="AboutModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">About</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="accordion" id="AboutAccordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                                <strong>About the Application:</strong>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse"
+                                            data-bs-parent="#AboutAccordion">
+                                            <div class="accordion-body">
+                                                Welcome to my carpark availability application! My aim is to streamline
+                                                your parking experience by providing you with information on available
+                                                parking spaces.
+                                                <br><br>
+                                                <strong>Key Features:</strong>
+                                                <br>
+                                                <strong>Real-Time Updates:</strong> Finding parking spaces can be a
+                                                hassle. This application provides you with real-time data on HDB carpark
+                                                availability.
+                                                <br><br>
+                                                <strong>Favourites:</strong> Tailor your experience by saving your most
+                                                frequented carparks, giving you easy access to your favourite lots.
+                                                <br><br>
+                                                <strong>Convenient Navigation:</strong> Going to a new carpark and
+                                                you're unfamiliar with the neighbourhood? Our application conveniently
+                                                links you to Google Maps to help find your way there!
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                <strong>About Me:</strong>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            data-bs-parent="#AboutAccordion">
+                                            <div class="accordion-body">
+
+                                                Hello, I am Khairul, the creator of this carpark application! I find
+                                                inspiration in simple every-day solutions that we might take for
+                                                granted. This is my first of many attempts at creating simple solutions
+                                                for people. I hope you find it useful!
+                                                <br><br>
+                                                You can find more information here - <strong><a
+                                                        href="https://github.com/Khairul-Imran" target="_blank">GitHub:
+                                                        Khairul-Imran</a></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+
+            <div class="col-md-3 text-end">
+                <a th:href="@{/}">
+                    <button type="button" class="btn btn-outline-danger me-2">Logout</button>
+                </a>
+
+            </div>
+
+        </header>
+
+        <h2>Search Results for: <span th:text="${query}" style="text-transform: uppercase;" ></span></h2>
+
+        <div class="mb-3">
+            <form th:action="@{/hdb-filter}" method="GET">
+                <input type="text" name="query" placeholder="Filter Address" required class="mb-3 me-2">
+
+                <button type="submit">Search</button>
+            </form>
+            <!-- For showing the full list again -->
+            <a th:href="@{/hdb-carparks}">
+                <button>Reset</button>
+            </a>
+        </div>
+
+        <div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Carpark Address</th>
+                        <th>Available Lots</th>
+                        <th>Latest Update</th>
+                        <th>Favourite</th>
+                    </tr>
+                </thead>
+
+                <tbody class="table-group-divider">
+                    <tr th:each="carpark : ${hdbCarParkMap}">
+                        <td class="">
+                            <a class="text-reset text-decoration-none nav-link link-secondary btn"
+                                th:href="${carpark.value.googleMapsLink}" target="_blank">
+                                <span th:text="${carpark.key}"></span>
+                            </a>
+                        </td>
+
+                        <td th:text="${carpark.value.lotsAvailable}"></td>
+                        <td th:text="${carpark.value.updateDateTime}"></td>
+                        <td>
+                            <form th:action="@{/filter-addFavourite}" method="POST">
+                                <input type="hidden" name="username" th:value="${username}">
+                                <input type="hidden" name="carParkName" th:value="${carpark.key}">
+                                <input type="hidden" name="query" th:value="${query}">
+                                <button type="submit" onclick="popUp()">Add to Favourites</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <footer class="footer d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-body-secondary"> Done by: <a class="text-reset text-decoration-none" href="https://github.com/Khairul-Imran" target="_blank">Khairul</a> </p>
+
+            <a href="/homepage"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img src="car-svgrepo-com.svg" alt="Car Icon" style="width: 45px; height: 45px;">
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="/homepage" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="nav-item"><a th:href="@{/hdb-carparks}" class="nav-link px-2 text-body-secondary">HDB
+                        Carparks</a></li>
+                <!-- Model related -->
+                <li class="nav-item"><a class="nav-link px-2 text-body-secondary btn" data-bs-toggle="modal"
+                        data-bs-target="#FAQModal">FAQs</a></li>
+                <li class="nav-item"><a class="nav-link px-2 text-body-secondary btn" data-bs-toggle="modal"
+                        data-bs-target="#AboutModal">About</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

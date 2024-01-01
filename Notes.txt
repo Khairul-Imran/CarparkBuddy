@@ -1,0 +1,44 @@
+
+Summary:
+For HDB Data:
+-> use https://api.data.gov.sg/v1/transport/carpark-availability
+-> pair this with the csv containing all HDB carpark names.
+(Datamall has HDB data too, but it requires multiple requests to get all the records...)
+
+For Malls and URA carparks:
+-> use Datamall (only need the first 500 records)
+-> Datamall has the names there already, don't need to pair with the csv.
+
+
+Data Sources:
+- Data.gov.sg
+- CSV containing all HDB carparks - https://beta.data.gov.sg/datasets/d_23f946fa557947f93a8043bbef41dd09/view 
+
+- LTA Datamall API - 2482 records in total (returns maximum of 500 records at a time.)
+- Capitaland - justpark - https://justpark.capitaland.com/LotsAvail# 
+
+
+
+
+TODOs:
+
+- Footer -> might add for the landing page also.
+
+- Can give the table some kind styling? Like rounded corners or something.
+- Settle text alignment, and button alignment 
+- Settle the colours (do one version first, think of dark/light later)
+
+- Need an error page (WILL DO THIS) -> See if bootstrap has any you can use.
+
+Think of adding additional functionality:
+- light / dark mode
+
+Things to add in dockerfile:
+- csv file
+- icons
+- double check if anything else
+
+List of things to talk about:
+- Show filtering (typos too) *****Remember to test the tolerence again*****
+- Show google maps link (Be sure to choose the links that directly show a carpark)
+    - 513A Choa Chu Kang Street 51

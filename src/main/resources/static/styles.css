@@ -1,0 +1,18 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+#landingpage-body {
+    display: flex;
+}
+
+.wrapper {
+    min-height: calc(100vh - 13vh);
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
