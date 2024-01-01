@@ -214,7 +214,7 @@
 
         <div class="mb-3">
             <form th:action="@{/hdb-filter}" method="GET">
-                <input type="text" name="query" placeholder="Filter Address" required class="mb-2 me-2">
+                <input type="text" name="query" placeholder="Filter Address" required class="mb-2 me-2 input-group">
 
                 <button type="submit">Search</button>
             </form>
@@ -252,7 +252,7 @@
                             <form th:action="@{/addFavourite}" method="POST">
                                 <input type="hidden" name="username" th:value="${username}">
                                 <input type="hidden" name="carParkName" th:value="${carpark.key}">
-                                <button type="submit" onclick="popUp()">Add to Favourites</button>
+                                <button class="btn btn-success btn-sm" type="submit" onclick="popUp()">Add to Favourites</button>
                             </form>
                         </td>
                     </tr>

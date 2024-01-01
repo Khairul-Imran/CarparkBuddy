@@ -22,9 +22,6 @@ Data Sources:
 
 TODOs:
 
-- Footer -> might add for the landing page also.
-
-- Can give the table some kind styling? Like rounded corners or something.
 - Settle text alignment, and button alignment 
 - Settle the colours (do one version first, think of dark/light later)
 
@@ -37,6 +34,8 @@ Things to add in dockerfile:
 - csv file
 - icons
 - double check if anything else
+
+- Remember to tidy up the code.
 
 List of things to talk about:
 - Show filtering (typos too) *****Remember to test the tolerence again*****

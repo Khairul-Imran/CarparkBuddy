@@ -247,7 +247,7 @@
                             <form th:action="@{/removeFavourite}" method="POST">
                                 <input type="hidden" name="username" th:value="${username}">
                                 <input type="hidden" name="carParkName" th:value="${favourite.key}">
-                                <button type="submit" onclick="popUp()">Remove</button>
+                                <button class="btn btn-danger btn-sm" type="submit" onclick="popUp()">Remove</button>
                             </form>
                         </td>
                     </tr>
