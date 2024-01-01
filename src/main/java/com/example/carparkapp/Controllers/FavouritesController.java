@@ -37,7 +37,6 @@ public class FavouritesController {
 
         carParkFavouriteService.saveFavourite(username, hdbCarParkInfo);
 
-        // model.addAttribute("successfullyAdded", true);
         return "redirect:/hdb-carparks";
     }
 
@@ -70,8 +69,6 @@ public class FavouritesController {
         
         carParkFavouriteService.deleteFavourite(username, hdbCarParkInfo);
 
-        
         return "redirect:/homepage";
     }
-
 }

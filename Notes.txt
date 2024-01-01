@@ -25,14 +25,13 @@ TODOs:
 - Settle text alignment, and button alignment 
 - Settle the colours (do one version first, think of dark/light later)
 
-- Need an error page (WILL DO THIS) -> See if bootstrap has any you can use.
+- Need an error page (WILL DO THIS)
 
 Think of adding additional functionality:
 - light / dark mode
 
 Things to add in dockerfile:
 - csv file
-- icons
 - double check if anything else
 
 - Remember to tidy up the code.

@@ -132,6 +132,4 @@ public class CarParkService {
 
         return carParkData;
     }
-
-
 }

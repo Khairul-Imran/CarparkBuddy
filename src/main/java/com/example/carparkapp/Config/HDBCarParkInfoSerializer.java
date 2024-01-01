@@ -31,5 +31,4 @@ public class HDBCarParkInfoSerializer implements RedisSerializer<HDBCarParkInfo>
             throw new SerializationException("Error desirializing value.", e);
         }
     }
-    
 }

@@ -2,8 +2,6 @@ package com.example.carparkapp.Models;
 
 import java.io.Serializable;
 
-// import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

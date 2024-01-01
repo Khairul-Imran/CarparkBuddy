@@ -96,7 +96,6 @@ public class CarParkRepository {
         }
     }
 
-
     public Set<String> getAllKeys() {
         return redisTemplate.keys("*");
     }

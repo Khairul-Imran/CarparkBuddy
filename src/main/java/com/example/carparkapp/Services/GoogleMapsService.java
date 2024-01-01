@@ -24,5 +24,4 @@ public class GoogleMapsService {
 
         return fullURL;
     }
-
 }

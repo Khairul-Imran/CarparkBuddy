@@ -14,7 +14,7 @@ import me.xdrop.fuzzywuzzy.FuzzySearch;
 public class CarParkFilterService {
 
     public Map<String, HDBCarParkInfo> filterHDBCarParkByAddress(Map<String, HDBCarParkInfo> hdbCarParkMap, String searchQuery) {
-        int acceptableIndex = 90;
+        int acceptableIndex = 90; // To adjust.
 
         Map<String, HDBCarParkInfo> filteredHDBCarParkMap = hdbCarParkMap.entrySet().stream()
                 .filter(carparkName -> {

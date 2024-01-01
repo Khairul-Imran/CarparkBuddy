@@ -56,11 +56,9 @@ public class CarParkFavouriteService {
                 Collection<HDBCarParkInfo> carparksToUpdate = userFavouritesToUpdate.values();
                 for (HDBCarParkInfo hdbCarParkInfo : carparksToUpdate) {
                     if (!carparksToUpdate.isEmpty()) {
-                        // System.out.println("Deleting favourite carpark: " + hdbCarParkInfo.getCarParkName().toString() + ". Update time: " + hdbCarParkInfo.getUpdateDateTime().toString());
                         deleteFavourite(username, hdbCarParkInfo);
                         
                         carParkRepository.addFavouriteBasedOnCarpParkName(username, hdbCarParkInfo.getCarParkName());
-                        // System.out.println("Saving favourite carpark: " + hdbCarParkInfo.getCarParkName().toString() + ". Update time: " + hdbCarParkInfo.getUpdateDateTime().toString());
                     }
                 }
             }

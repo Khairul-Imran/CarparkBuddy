@@ -62,25 +62,4 @@ public class CarParkJsonService {
 
         return jsonCarParkArray;
     }
-
-    // For view (testing only) - Removed some data we don't need.
-    // public JsonArray HDBCarParkToJsonForView() {
-    //     List<HDBCarParkInfo> carParkList = carParkRepository.getFullHDBCarParkDataFromRedisInList();
-
-    //     JsonArrayBuilder jsonCarParkArrayBuilder = Json.createArrayBuilder();
-
-    //     for (HDBCarParkInfo carPark : carParkList) {
-    //         JsonObject carParkJson = Json.createObjectBuilder()
-    //             .add("lotsAvailable", carPark.getLotsAvailable())
-    //             .add("carParkName", carPark.getCarParkName())
-    //             .add("updateDateTime", carPark.getUpdateDateTime())
-    //             .add("googleMapsLink", carPark.getGoogleMapsLink())
-    //             .build();
-
-    //         jsonCarParkArrayBuilder.add(carParkJson);
-    //     }
-    //     JsonArray jsonCarParkArray = jsonCarParkArrayBuilder.build();
-
-    //     return jsonCarParkArray;
-    // }
 }
