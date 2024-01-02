@@ -35,4 +35,4 @@ ENV SPRING_REDIS_PASSWORD=abc123
 
 EXPOSE ${PORT}
 
-ENTRYPOINT SERVER_PORT=${PORT} java -jar eventapp.jar
+ENTRYPOINT SERVER_PORT=${PORT} java -jar carparkapp.jar
