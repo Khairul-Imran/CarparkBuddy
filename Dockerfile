@@ -23,6 +23,7 @@ WORKDIR ${APP_DIR2}
 
 # Remember to change the jar names!
 COPY --from=builder /app/target/carparkapp-0.0.1-SNAPSHOT.jar carparkapp.jar 
+COPY --from=builder /app/HDBCarparkInformation.csv .
 
 # Need these for the environment variables
 ENV PORT=8080
