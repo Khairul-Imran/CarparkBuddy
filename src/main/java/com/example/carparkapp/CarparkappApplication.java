@@ -26,7 +26,6 @@ public class CarparkappApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-
 		
 		CarParkData carParkData = carParkService.getCarParkData();
 

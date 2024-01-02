@@ -1,7 +1,7 @@
 FROM maven:3-eclipse-temurin-21 AS builder
 
 LABEL MAINTAINER="khairulimran6810@gmail.com"
-LABEL APPLICATION="News Application"
+LABEL APPLICATION="Car Availability Application"
 
 WORKDIR /app
 

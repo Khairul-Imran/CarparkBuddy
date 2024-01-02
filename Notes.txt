@@ -23,11 +23,6 @@ Data Sources:
 TODOs:
 - double check that error pages work.
 
-- Settle the colours (do one version first, think of dark/light later)
-
-Think of adding additional functionality: (no time)
-- light / dark mode
-
 Things to add in dockerfile:
 - csv file
 - double check if anything else
