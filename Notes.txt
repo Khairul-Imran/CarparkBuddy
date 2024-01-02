@@ -21,13 +21,13 @@ Data Sources:
 
 
 TODOs:
+- Sticky header
 
-- Settle text alignment, and button alignment 
 - Settle the colours (do one version first, think of dark/light later)
 
 - Need an error page (WILL DO THIS)
 
-Think of adding additional functionality:
+Think of adding additional functionality: (no time)
 - light / dark mode
 
 Things to add in dockerfile:
