@@ -22,7 +22,7 @@ ARG APP_DIR2=/app
 WORKDIR ${APP_DIR2}
 
 # Remember to change the jar names!
-COPY --from=builder /app/target/eventmanagement-0.0.1-SNAPSHOT.jar eventapp.jar 
+COPY --from=builder /app/target/carparkapp-0.0.1-SNAPSHOT.jar carparkapp.jar 
 
 # Need these for the environment variables
 ENV PORT=8080
