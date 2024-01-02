@@ -21,11 +21,9 @@ Data Sources:
 
 
 TODOs:
-- Sticky header
+- double check that error pages work.
 
 - Settle the colours (do one version first, think of dark/light later)
-
-- Need an error page (WILL DO THIS)
 
 Think of adding additional functionality: (no time)
 - light / dark mode

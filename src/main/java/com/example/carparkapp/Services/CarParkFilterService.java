@@ -14,11 +14,11 @@ import me.xdrop.fuzzywuzzy.FuzzySearch;
 public class CarParkFilterService {
 
     public Map<String, HDBCarParkInfo> filterHDBCarParkByAddress(Map<String, HDBCarParkInfo> hdbCarParkMap, String searchQuery) {
-        int acceptableIndex = 90; // To adjust.
+        int acceptableIndex = 87; // To adjust.
 
         Map<String, HDBCarParkInfo> filteredHDBCarParkMap = hdbCarParkMap.entrySet().stream()
                 .filter(carparkName -> {
-                    int comparisonIndex = FuzzySearch.weightedRatio(carparkName.getKey().toLowerCase(), searchQuery);
+                    int comparisonIndex = FuzzySearch.partialRatio(carparkName.getKey().toLowerCase(), searchQuery);
                     return comparisonIndex >= acceptableIndex;
                 })
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue, LinkedHashMap::new));

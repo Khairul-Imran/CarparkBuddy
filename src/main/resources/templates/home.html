@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
     <title>Homepage</title>
     <script>
         function popUp() {
@@ -33,17 +33,17 @@
             <!-- There is a way to make the buttons solidify when you hover over them. see vid -->
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
-                <li><a th:href="@{/hdb-carparks}" class="nav-link px-2 link-secondary btn btn-outline-info">HDB
+                <li><a th:href="@{/hdb-carparks}" class="nav-link px-2 link-secondary btn btn-outline-warning">HDB
                         Carparks</a></li>
 
-                <li><a class="nav-link px-2 link-secondary btn btn-outline-info" data-bs-toggle="modal"
+                <li><a class="nav-link px-2 link-secondary btn btn-outline-warning" data-bs-toggle="modal"
                         data-bs-target="#FAQModal">FAQs</a></li>
 
                 <!-- Modal -->
                 <div class="modal fade" id="FAQModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content">
+                        <div class="modal-content" style="background-color: #FDFAEE;">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="exampleModalLabel">Frequently Asked Questions</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -52,11 +52,12 @@
 
                             <div class="modal-body">
                                 <div class="accordion" id="FAQAccordion">
-                                    <div class="accordion-item">
+                                    <div class="accordion-item" style="background-color: #F4F9E4; border-color: black;">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                                aria-expanded="true" aria-controls="collapseOne">
+                                                aria-expanded="true" aria-controls="collapseOne"
+                                                style="background-color: #F4F9E4;">
                                                 <strong>How accurate is your data?</strong>
                                             </button>
                                         </h2>
@@ -73,11 +74,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="accordion-item">
+                                    <div class="accordion-item" style="background-color: #F4F9E4; border-color: black;">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                aria-expanded="false" aria-controls="collapseTwo"
+                                                style="background-color: #F4F9E4;">
                                                 <strong>Why can't I find the carpark that I want?</strong>
                                             </button>
                                         </h2>
@@ -90,11 +92,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="accordion-item">
+                                    <div class="accordion-item" style="background-color: #F4F9E4; border-color: black;">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                                aria-expanded="false" aria-controls="collapseThree">
+                                                aria-expanded="false" aria-controls="collapseThree"
+                                                style="background-color: #F4F9E4;">
                                                 <strong>Why did you build this website?</strong>
                                             </button>
                                         </h2>
@@ -120,14 +123,14 @@
                     </div>
                 </div>
 
-                <li><a class="nav-link px-2 link-secondary btn btn-outline-info" data-bs-toggle="modal"
+                <li><a class="nav-link px-2 link-secondary btn btn-outline-warning" data-bs-toggle="modal"
                         data-bs-target="#AboutModal">About</a></li>
 
                 <!-- Modal -->
                 <div class="modal fade" id="AboutModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content">
+                        <div class="modal-content" style="background-color: #FDFAEE;">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="exampleModalLabel">About</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -136,11 +139,12 @@
 
                             <div class="modal-body">
                                 <div class="accordion" id="AboutAccordion">
-                                    <div class="accordion-item">
+                                    <div class="accordion-item" style="background-color: #F4F9E4; border-color: black;">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                                aria-expanded="true" aria-controls="collapseOne">
+                                                aria-expanded="true" aria-controls="collapseOne"
+                                                style="background-color: #F4F9E4;">
                                                 <strong>About the Application:</strong>
                                             </button>
                                         </h2>
@@ -167,11 +171,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="accordion-item">
+                                    <div class="accordion-item" style="background-color: #F4F9E4; border-color: black;">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                aria-expanded="false" aria-controls="collapseTwo"
+                                                style="background-color: #F4F9E4;">
                                                 <strong>About Me:</strong>
                                             </button>
                                         </h2>
@@ -247,7 +252,8 @@
                             <form th:action="@{/removeFavourite}" method="POST">
                                 <input type="hidden" name="username" th:value="${username}">
                                 <input type="hidden" name="carParkName" th:value="${favourite.key}">
-                                <button class="btn btn-danger btn-sm" type="submit" onclick="popUp()">Remove</button>
+                                <button class="btn btn-sm" style="background-color: #AAF285; color: black" type="submit"
+                                    onclick="popUp()">Remove</button>
                             </form>
                         </td>
                     </tr>
