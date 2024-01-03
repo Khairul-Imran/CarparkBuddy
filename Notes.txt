@@ -18,18 +18,11 @@ Data Sources:
 - Capitaland - justpark - https://justpark.capitaland.com/LotsAvail# 
 
 
-
-
-TODOs:
-- double check that error pages work.
-
-Things to add in dockerfile:
-- csv file
-- double check if anything else
-
-- Remember to tidy up the code.
-
 List of things to talk about:
-- Show filtering (typos too) *****Remember to test the tolerence again*****
+- Show filtering (typos too) 
 - Show google maps link (Be sure to choose the links that directly show a carpark)
     - 513A Choa Chu Kang Street 51
+
+
+For next time:
+-see one map api!!!
